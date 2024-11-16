@@ -1,2 +1,14 @@
 server:
-  port: 8080
+  port: #{server.port}
+  
+management:
+  endpoint:
+    health:
+      enabled: #{management.endpoint.health.enabled}
+  endpoints:
+    web:
+      base-path: #{management.endpoints.web.base-path}
+  
+dummyjson:
+  server:
+    url: #{dummyjson.server.url}
