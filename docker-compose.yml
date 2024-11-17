@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: '1'
+services:
+
+  service-name:
+    image: dummyjson-client
+#    environment:
+#    - GREETING=hello
+    env_file:
+    - .env
