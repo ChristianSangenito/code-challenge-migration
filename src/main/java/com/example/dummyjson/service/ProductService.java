@@ -20,6 +20,6 @@ public class ProductService {
     }
 
     public Product getProductById(Long id) {
-    	return productClient.getPRoductById(id);
+    	return productClient.getProductById(id);
     }
 }
