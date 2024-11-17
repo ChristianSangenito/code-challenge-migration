@@ -21,12 +21,13 @@ dummyjson-client
 │   │   ├── java
 │   │   │   └── com.example.dummyjsonclient
 │   │   │       ├── DummyJsonClientApplication.java
-│   │   │       ├── config
-│   │   │       │   └── RestTemplateConfig.java
 │   │   │       ├── controller
 │   │   │       │   └── ProductController.java
 │   │   │       ├── dto
 │   │   │       │   └── Product.java
+│   │   │       │   └── ProductWrapper.java
+│   │   │       ├── interfaces
+│   │   │       │   └── ProductClient.java
 │   │   │       ├── service
 │   │   │       │   └── ProductService.java
 │   │   └── resources
@@ -34,14 +35,16 @@ dummyjson-client
 │   └── test
 │       ├── java
 │       │   └── com.example.dummyjsonclient
-│       │       ├── config
-│       │       │   └── RestTemplateConfigTest.java
+│       │       ├── DummyJsonClientApplicationTest.java
 │       │       └── controller
 │       │       │   └── ProductControllerTest.java
 │       │       ├── dto
 │       │       │   └── ProductTest.java
+│       │       │   └── ProductWrapperTest.java
 │       │       └── service
 │       │           └── ProductServiceTest.java
+│       │       └── util
+│       │           └── ProductUtil.java
 │       └── resources
 └── pom.xml
 ```
@@ -109,6 +112,8 @@ Acesse o serviço:
 
 ### Executar a Aplicação no CMD
 
+No diretório raiz da aplicação:
+
 Compile o projeto:
 
     ```
@@ -146,12 +151,16 @@ Acesse o serviço:
 No diretório raiz da aplicação:
 
 Gerar o JAR da aplicação
-     
+      
+     ```bash
      mvn clean package
-
+     ```
+     
 Construir a Imagem Docker
-
+      
+     ```bash
 	 docker build -t dummyjson-client .
+     ```     
 
 Rodar o contêiner
 
@@ -170,7 +179,7 @@ Acesse o serviço:
 
 ### Executar Testes
 
-Para executar os testes unitários:
+No diretório raiz da aplicação:
 
 ```bash
 mvn clean test

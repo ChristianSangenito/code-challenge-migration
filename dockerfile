@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/dummyjson-client-1.0-SNAPSHOT.jar app.jar
 
 # Expõe a porta que a aplicação irá rodar
-EXPOSE 8080
+#EXPOSE 8080
 
 # Comando para rodar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
